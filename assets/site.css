@@ -141,6 +141,15 @@ dialog video { width: 100%; aspect-ratio: 512 / 224; background: #000; }
 .ach-tools input { flex: 1 1 14rem; min-height: 2.6rem; padding: .4rem .7rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; }
 .ach-group[hidden], tr[hidden] { display: none; }
 
+.bitcoffee { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 1.5rem; align-items: start; margin-top: 1.5rem; max-width: 50rem; }
+.bitcoffee .qr { width: 100%; height: auto; background: #fff; padding: 1rem; border-radius: 10px; }
+.bitcoffee h3 { font: 400 2rem/1 var(--pixel); }
+.bitcoffee p { color: var(--ink); }
+.bitcoffee code { display: block; overflow-wrap: anywhere; user-select: all; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: .6rem .8rem; font-size: .95rem; }
+.copyline { display: flex; align-items: center; gap: .75rem; margin: .75rem 0; }
+.copyline span { color: var(--ok); font-size: .95rem; }
+@media (max-width: 40rem) { .bitcoffee { grid-template-columns: 1fr; } .bitcoffee .qr { max-width: 14rem; } }
+
 /* footer */
 footer { margin-top: 5rem; border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--dim); font-size: .95rem; }
 footer .wrap { display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }

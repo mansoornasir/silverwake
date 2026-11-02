@@ -146,6 +146,22 @@ const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
   q.addEventListener("keydown", (e) => { if (e.key === "Escape") { q.value = ""; res.classList.remove("open"); } });
 })();
 
+/* BitCoffee: copy the address, or select it where the clipboard is refused. */
+(function bitcoffee() {
+  const b = $("#btc-copy");
+  if (!b) return;
+  const code = $("#btc-address"), out = $("#btc-status");
+  const selectIt = () => {
+    const r = document.createRange(); r.selectNodeContents(code);
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    out.textContent = "Selected: copy it from here.";
+  };
+  b.addEventListener("click", () => {
+    if (!navigator.clipboard) { selectIt(); return; }
+    navigator.clipboard.writeText(code.textContent).then(() => { out.textContent = "Address copied."; }, selectIt);
+  });
+})();
+
 /* Achievements: filter by status, reach or words; hidden ones only on request. */
 (function ach() {
   const rows = $$("tr.ach");
