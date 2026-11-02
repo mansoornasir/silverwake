@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mansoornasir.github.io/silverwake/sitemap.xml

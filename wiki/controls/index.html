@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Controls - SILVERWAKE guide</title>
+<meta name="description" content="Every gesture, with a small playable demo.">
+<link rel="canonical" href="https://mansoornasir.github.io/silverwake/wiki/controls/">
+<link rel="icon" href="../../assets/icon_512.png">
+<meta name="theme-color" content="#0b0e14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Controls - SILVERWAKE guide">
+<meta property="og:description" content="Every gesture, with a small playable demo.">
+<meta property="og:image" content="https://mansoornasir.github.io/silverwake/assets/og.jpg">
+<meta property="og:url" content="https://mansoornasir.github.io/silverwake/wiki/controls/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap"><a class="logo" href="../../">SILVERWAKE</a><nav aria-label="Site"><a href="../../#bosses">Bosses</a><a href="../../#try">Try it</a><a href="../../#guns">Guns</a><a href="../../wiki/story/">Lore</a><a href="../../wiki/" aria-current=page>Guide</a><a href="../../presskit/">Press</a></nav></div></header>
+<main id="main" class="wrap wiki">
+<aside class="side" aria-label="Guide">
+<div class="search"><input id="wiki-search" data-root="../../" type="search" placeholder="Search the guide" aria-label="Search the guide"><div class="results" id="wiki-results"></div></div>
+<button class="btn toggle-side" aria-expanded="false">All guide pages</button>
+<div class="links"><h4>Guide</h4><a href="../">Guide home</a><h4>Start here</h4><a href="../start/">Your first hour</a><a href="../controls/" aria-current=page>Controls</a><h4>Fighting</h4><a href="../dodging/">Reading attacks</a><a href="../guns/">Guns</a><a href="../melee/">Melee and the Parry</a><a href="../items/">Items and abilities</a><a href="../armour/">Armour</a><h4>Progress</h4><a href="../skills/">Skills</a><a href="../docks/">Docks, death and XP</a><h4>World</h4><a href="../rooms/">Rooms and goals</a><a href="../bosses/">Bosses</a><a href="../sectors/">Sectors</a><h4>Lore and NPCs</h4><a href="../story/">The story</a><a href="../npcs/">NPCs</a><a href="../abbey/">The abbey and its bells</a><a href="../endings/">Endings</a><a href="../history/">The hidden history</a><h4>More</h4><a href="../modes/">Modes and challenges</a><a href="../settings/">Settings and accessibility</a><a href="../faq/">FAQ</a></div>
+</aside>
+<article><h1>Controls</h1>
+<p class="intro">You fly with one thumb. The ship shoots by itself, so your whole job is where to be and which way to face.</p>
+<div class="demo" data-hero="../../assets/vanguard.png">
+<canvas role="img" aria-label="A small playable sketch: the Vanguard against a training bell"></canvas>
+<div class="demo-start"><p id="demo-msg">A small sketch of how the Vanguard handles, against a training bell. It is not the game itself.</p><button class="btn main" id="demo-go">Start</button></div>
+</div>
+<ul class="steps" id="demo-steps"><li>Drag to fly and aim</li><li>Quick tap to dash</li><li>Tap toward the bell, up close, to strike</li><li>Two fingers together to parry</li></ul>
+<p class="note">With a mouse: drag to fly, click to dash or strike, right-click to parry. With keys: arrows or WASD to fly, <kbd>Space</kbd> to dash or strike, <kbd>P</kbd> to parry. Your gun fires by itself.</p>
+<h2 id="table">Every gesture</h2>
+<div class="tablewrap"><table>
+<tr><th>Do this</th><th>What happens</th></tr>
+<tr><td><b>Drag anywhere</b></td><td>Fly that way and face that way. The drag can start anywhere on screen. A slow drag moves you one to one, a quick one up to twice as far, and the ship stops where your finger stops or lifts.</td></tr>
+<tr><td><b>Quick tap</b></td><td>Dash. You are untouchable for a moment, so a dash can pass through bullets.</td></tr>
+<tr><td><b>Tap toward a close enemy</b></td><td>Melee strike: dart in, hit with an explosion, spring back unhurt. It reaches about 64 px, the width of four floor tiles.</td></tr>
+<tr><td><b>Two fingers, tapped together</b></td><td>Parry. It swings all round you and cuts every bullet near you. The Parry wall button does the same.</td></tr>
+<tr><td><b>Three fingers, tapped together</b></td><td>Your quick ability: slow-mo by default. Pick another at any Lantern Dock.</td></tr>
+<tr><td><b>Hold a second finger while flying</b></td><td>Aim separately. That finger holds your heading where it landed, then points the ship by its angle from there, so you can shoot back while retreating.</td></tr>
+<tr><td><b>Switch button</b></td><td>Swap between your two guns.</td></tr>
+<tr><td><b>Other wall buttons</b></td><td>Use an item or ability at once, with no freeze.</td></tr>
+<tr><td><b>Pause icon, top right</b></td><td>The map, your run's numbers, Settings, Skills and Quit. Quit saves the run. Two thumbs held together resume.</td></tr>
+</table></div>
+<h2 id="aim">How aiming works</h2>
+<p>You aim by the way you are flying. In drag mode, the heading is the line through the last 5 mm of your finger's path, exact at any angle and steady through a shaky hand. To aim without travelling far, make a very short drag in the direction you want.</p>
+<p>A small aim assist bends a shot that would just miss by at most 8.4 degrees. It never seeks, and it never turns the ship. The Wisp Seeker is the exception: it aims itself at enemies within 80 px.</p>
+<div class="tip"><b>Practise this:</b> fly in a slow arc around a boss. You stay moving, which dodges aimed fire, and your nose stays near the target, which keeps you shooting.</div>
+<h2 id="hud">What is on screen</h2>
+<ul>
+<li><b>Top left:</b> your hull plates, one per hit, and the picture of each gun you carry.</li>
+<li><b>Top wall:</b> the room's wave count or goal, or a boss's name and health.</li>
+<li><b>Bottom wall:</b> your wall buttons. They can move up the left or right wall in Settings.</li>
+<li><b>Round the ship:</b> the Parry's recharge ring, and a dashed lilac ring further out for the melee strike.</li>
+</ul>
+<h2 id="change">Changing the controls</h2>
+<div class="tablewrap"><table>
+<tr><th>Setting</th><th>What it changes</th></tr>
+<tr><td><b>Stick movement</b></td><td>A stick under your thumb, not drag</td></tr><tr><td><b>Steer anywhere</b></td><td>The stick hides and follows your thumb</td></tr><tr><td><b>Drag speed</b></td><td>How far the Vanguard flies for your finger</td></tr><tr><td><b>Sensitivity</b></td><td>Higher: the Vanguard flies further for less thumb travel</td></tr><tr><td><b>Tap away from enemies</b></td><td>A tap away from enemies: Dash, or Lunge to strike what you pass</td></tr><tr><td><b>Stick side</b></td><td>Buttons and Pause take the other side</td></tr><tr><td><b>Wall buttons</b></td><td>Where the ability buttons sit: along the bottom wall, or up the left or right wall</td></tr><tr><td><b>Button order</b></td><td>Tap a button, then another, to swap them; 1 sits at the corner. Grey ones you have not had in a run yet</td></tr><tr><td><b>Action buttons</b></td><td>Dash, Bomb, Slow-mo and Halo on screen</td></tr><tr><td><b>Mini-map</b></td><td>Faint, on the arena floor, top left</td></tr><tr><td><b>Vibration</b></td><td>A buzz when you are hit</td></tr>
+</table></div>
+
+<nav class="pager" aria-label="Next and previous"><a href="../start/">← Your first hour</a><a href="../dodging/">Reading attacks →</a></nav></article>
+</main>
+<footer><div class="wrap">
+<img src="../../assets/souls_indie_studio.png" alt="Souls Indie Studio" width="104" height="48">
+<ul><li><a href="../../wiki/">Guide</a></li><li><a href="../../presskit/">Press kit</a></li><li><a href="https://mansoornasir.github.io/silverwake-privacy/">Privacy policy</a></li><li><a href="https://buymeacoffee.com/soulsindie">Buy me a coffee</a></li><li><a href="mailto:mrmansoornasir@gmail.com">mrmansoornasir@gmail.com</a></li></ul>
+<p style="margin:0">Google Play is a trademark of Google LLC.</p>
+</div></footer>
+<script src="../../assets/site.js"></script>
+</body>
+</html>
