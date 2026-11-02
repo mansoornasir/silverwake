@@ -17,6 +17,27 @@ const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
   b.addEventListener("click", () => set(v.paused));
 })();
 
+/* Reel chapters: jump to a part of the video; the current one lights up with a line on what is showing. */
+(function chapters() {
+  const v = $(".hero video"), box = $(".chapters"), src = $("#reel-data");
+  if (!v || !box || !src) return;
+  const shots = JSON.parse(src.textContent).shots, now = $("#reel-now"), chips = $$("[data-chapter]", box);
+  function show() {
+    let cur = shots[0];
+    for (const s of shots) { if (s.t <= v.currentTime + 0.05) cur = s; else break; }
+    now.textContent = cur.caption;
+    for (const c of chips) c.setAttribute("aria-pressed", String(c.dataset.chapter === cur.chapter));
+  }
+  v.addEventListener("timeupdate", show);
+  v.addEventListener("seeked", show);
+  for (const c of chips) c.addEventListener("click", () => {
+    v.currentTime = shots.find((s) => s.chapter === c.dataset.chapter).t;
+    if (v.paused) { const b = $(".motion"); if (b) b.click(); else v.play().catch(() => {}); }
+    show();
+  });
+  show();
+})();
+
 /* Boss gallery and dialog. */
 (function gallery() {
   const dlg = $("#boss-dialog");

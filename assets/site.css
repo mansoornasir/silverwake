@@ -48,6 +48,10 @@ p { margin: 0 0 1em; }
 .soon { color: var(--dim); font-size: .95rem; }
 .motion { position: absolute; z-index: 3; right: 1rem; top: 1rem; min-height: 2.5rem; padding: .25rem .9rem; font-size: .9rem; background: rgba(11,14,20,.75); }
 
+.chapters { margin-top: 1.25rem; }
+.chapters .chips { margin: 0 0 .4rem; }
+.now { margin: 0; min-height: 1.65em; color: var(--dim); font-size: .95rem; }
+
 /* sections */
 section.block { padding: 4rem 0 1rem; }
 section.block > .wrap > h2, .lead-h { font-size: clamp(2.25rem, 5vw, 3.25rem); margin-bottom: .2em; }

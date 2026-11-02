@@ -8,4 +8,4 @@
 - Controls: One thumb. Drag anywhere to fly and aim; the gun fires by itself. Tap to dash, tap toward an enemy to dart in with the melee weapon, two-finger tap to parry, wall buttons for items, abilities and swapping guns.
 - Accessibility: Text up to 200%, reduced motion and flashes, high-contrast threats, gentle mode, battery saver, no critical cue that relies on colour alone.
 - Engine: Godot 4.7.2. Pixel art drawn for the game (some with a local image-model texture pass); sound synthesised in code. No stock assets.
-- Assets in this kit: icon_512.png, feature_graphic_1024x500.png, screenshots at 1536x672, souls_indie_studio.png (the studio card), reel.mp4 (a silent gameplay reel). The footage is the real game; a bot flies the ship in it.
+- Assets in this kit: icon_512.png, feature_graphic_1024x500.png, screenshots at 1536x672, souls_indie_studio.png (the studio card), reel.mp4 (a silent reel of bosses, enemies, omens, dark rooms and boss fights). The footage is the real game; a bot flies the ship in it.
