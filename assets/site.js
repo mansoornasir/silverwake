@@ -146,6 +146,44 @@ const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
   q.addEventListener("keydown", (e) => { if (e.key === "Escape") { q.value = ""; res.classList.remove("open"); } });
 })();
 
+/* Achievements: filter by status, reach or words; hidden ones only on request. */
+(function ach() {
+  const rows = $$("tr.ach");
+  if (!rows.length) return;
+  const find = $("#ach-find"), count = $("#ach-count"), sb = $("#ach-spoil");
+  let mode = "all", spoil = false;
+  function apply() {
+    const words = find.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    let n = 0;
+    for (const r of rows) {
+      let on = spoil || !("secret" in r.dataset);
+      if (mode === "now") on = on && r.dataset.now === "1";
+      if (mode === "soon") on = on && r.dataset.now === "0";
+      if (mode === "free") on = on && r.dataset.free === "1";
+      const hay = r.textContent.toLowerCase();
+      on = on && words.every((w) => hay.includes(w));
+      r.hidden = !on;
+      if (on) n++;
+    }
+    for (const g of $$(".ach-group")) g.hidden = !$$("tr.ach", g).some((r) => !r.hidden);
+    count.textContent = n + " shown";
+  }
+  $$("[data-ach]").forEach((b) => b.addEventListener("click", () => {
+    mode = b.dataset.ach;
+    $$("[data-ach]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    apply();
+  }));
+  find.addEventListener("input", apply);
+  const label = sb.textContent;
+  sb.addEventListener("click", () => {
+    spoil = !spoil;
+    sb.setAttribute("aria-pressed", String(spoil));
+    sb.textContent = spoil ? "Hide the hidden ones" : label;
+    apply();
+  });
+  apply();
+})();
+
 /* Try the controls: a small sketch of how the Vanguard handles, in the game's own world size. */
 (function demo() {
   const host = $(".demo");
