@@ -17,6 +17,13 @@ const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
   b.addEventListener("click", () => set(v.paused));
 })();
 
+/* The two-player clip plays once in view, unless motion or data is being saved. */
+(function coopClip() {
+  const v = $(".coop-clip");
+  if (!v || matchMedia("(prefers-reduced-motion: reduce)").matches || (navigator.connection && navigator.connection.saveData)) return;
+  new IntersectionObserver((en) => { if (en[0].isIntersecting) v.play().catch(() => {}); else v.pause(); }, { threshold: .4 }).observe(v);
+})();
+
 /* Reel chapters: jump to a part of the video; the current one lights up with a line on what is showing. */
 (function chapters() {
   const v = $(".hero video"), box = $(".chapters"), src = $("#reel-data");
