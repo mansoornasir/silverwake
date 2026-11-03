@@ -3,6 +3,66 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* Header: the Vanguard flies to the link you point at and rests on the section you are in; the silver line is how far you have read. */
+(function header() {
+  const bar = $(".bar"), nav = $(".bar nav"), mark = $(".nav-mark");
+  if (!bar || !nav || !mark) return;
+  const links = $$("a", nav);
+  const spied = links.map((a) => [a, a.hash && a.pathname === location.pathname ? $(a.hash) : null]).filter((x) => x[1]);
+  let at = -1;
+  function place(a) {
+    if (!a) { mark.style.opacity = 0; at = -1; return; }
+    mark.classList.toggle("back", a.offsetLeft < at);
+    at = a.offsetLeft;
+    mark.style.left = at + "px";
+    mark.style.width = a.offsetWidth + "px";
+    mark.style.opacity = 1;
+  }
+  const resting = () => links.find((a) => a.classList.contains("on") || a.hasAttribute("aria-current"));
+  for (const a of links) a.addEventListener("pointerenter", () => place(a));
+  nav.addEventListener("pointerleave", () => place(resting()));
+  let last = scrollY, queued = false;
+  function update() {
+    queued = false;
+    const y = scrollY, most = document.documentElement.scrollHeight - innerHeight;
+    bar.style.setProperty("--read", most > 0 ? Math.min(1, y / most) : 0);
+    bar.classList.toggle("past", y > 60);
+    if (innerWidth < 992) bar.classList.toggle("tuck", y > last && y > 240); else bar.classList.remove("tuck");
+    last = y;
+    let on = null;
+    for (const [a, sec] of spied) { const r = sec.getBoundingClientRect(); if (r.top < innerHeight * .4 && r.bottom > innerHeight * .4) on = a; }
+    const was = links.find((a) => a.classList.contains("on"));
+    if (was !== on) {
+      for (const [a] of spied) a.classList.toggle("on", a === on);
+      if (!nav.matches(":hover")) place(resting());
+      if (on && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: on.offsetLeft - 24, behavior: calm ? "auto" : "smooth" });
+    }
+  }
+  addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener("resize", () => place(resting()));
+  update();
+  place(resting());
+})();
+
+/* Footer: the four who are still awake take turns, while the footer is on screen. */
+(function nightLines() {
+  const box = $(".night-line");
+  if (!box) return;
+  const lines = JSON.parse(box.dataset.lines), say = $("p", box), who = $("cite", box);
+  let n = 0, seen = false;
+  new IntersectionObserver((en) => { seen = en[0].isIntersecting; }).observe(box);
+  setInterval(() => {
+    if (!seen || document.hidden || calm) return;
+    box.classList.add("fade");
+    setTimeout(() => {
+      n = (n + 1) % lines.length;
+      say.textContent = lines[n].line;
+      who.textContent = lines[n].who;
+      box.classList.remove("fade");
+    }, 350);
+  }, 7000);
+})();
+
 /* Hero reel: never autoplays for reduced motion or data saver. */
 (function hero() {
   const v = $(".hero video"), b = $(".motion");
@@ -364,7 +424,7 @@ const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!(s.inv > 0 && s.inv % 8 < 4)) {
       g.strokeStyle = "#86e4f3"; g.lineWidth = 1; g.beginPath(); g.moveTo(s.x, s.y); g.lineTo(s.x + s.hx * 14, s.y + s.hy * 14); g.stroke();
       g.imageSmoothingEnabled = false;
-      if (hero.complete && hero.naturalWidth) g.drawImage(hero, Math.round(s.x - hero.naturalWidth / 2), Math.round(s.y - hero.naturalHeight / 2));
+      if (hero.complete && hero.naturalWidth) g.drawImage(hero, Math.round(s.x) - 15, Math.round(s.y) - 15, 30, 30);
       else { g.fillStyle = "#dfe6f2"; g.fillRect(s.x - 5, s.y - 7, 10, 14); }
     }
     for (const f of s.fx) { g.strokeStyle = "rgba(255,255,255," + (1 - f.t / 14) + ")"; g.beginPath(); g.arc(f.x, f.y, f.r * (.5 + f.t / 20), 0, 7); g.stroke(); }
