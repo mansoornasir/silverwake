@@ -50,7 +50,7 @@ const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
   function apply() {
     for (const c of cards) {
       const d = data[c.dataset.id];
-      const secret = d.kind === "hidden";
+      const secret = d.kind === "hidden" || d.kind === "final";
       let on = !secret || spoil;
       if (filter === "free") on = on && d.sector <= 3;
       else if (filter !== "all") on = on && String(d.sector) === filter;
@@ -107,7 +107,7 @@ const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
   });
   apply();
   const m = location.hash.match(/^#boss\/([a-z_]+)$/);
-  if (m && data[m[1]]) { if (data[m[1]].kind === "hidden") sb.click(); open(m[1]); }
+  if (m && data[m[1]]) { if (data[m[1]].kind === "hidden" || data[m[1]].kind === "final") sb.click(); open(m[1]); }
 })();
 
 /* Gun explorer. */

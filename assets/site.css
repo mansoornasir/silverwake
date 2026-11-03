@@ -134,8 +134,8 @@ dialog video { width: 100%; aspect-ratio: 512 / 224; background: #000; }
 .npc-card:hover { border-color: var(--moon); color: var(--ink); }
 .npc-card b { display: block; margin-top: .5rem; line-height: 1.25; }
 .npc-card span { display: block; color: var(--dim); font-size: .92rem; font-style: italic; margin-top: .25rem; }
-.npc-sprite { width: 96px; height: 120px; flex: none; background-size: 384px 120px; background-repeat: no-repeat; image-rendering: pixelated; animation: npc-idle 1.33s steps(4) infinite; }
-@keyframes npc-idle { to { background-position-x: -384px; } }
+.npc-sprite { width: 128px; height: 128px; flex: none; background-size: 1536px 128px; background-repeat: no-repeat; image-rendering: pixelated; animation: npc-idle 1.8s steps(12) infinite; }
+@keyframes npc-idle { to { background-position-x: -1536px; } }
 .npc { border-top: 1px solid var(--line); margin-top: 2rem; padding-top: 1rem; }
 .npc-head { display: flex; gap: 1.25rem; align-items: center; }
 .npc-head h2 { margin: 0 0 .1em; }
