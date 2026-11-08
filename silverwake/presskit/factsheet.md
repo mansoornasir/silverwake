@@ -1,6 +1,6 @@
 # SILVERWAKE - fact sheet
 
-- Title: SILVERWAKE (working title). Developer: Souls Indie Studio (Mansoor Nasir). Contact: support@soulsindie.com.
+- Title: SILVERWAKE. Developer: Souls Indie Studio (Mansoor Nasir). Contact: support@soulsindie.com.
 - Platform: Android (Google Play). iOS later. Price: free opening chapter (sectors 1-3); the Full Game (sectors 4-10), USD 3.99, also removes adverts. Optional cosmetic packs (USD 1.99 each, Supporter pack USD 4.99) change appearance only. No subscriptions, no energy, no paid power.
 - Genre: Gothic bullet-hell roguelite, top-down, room-based, landscape, pixel art. Plays offline; optional two-phone co-op over local Wi-Fi, no internet.
 - One sentence: Fly the Lanternbound Vanguard through ten haunted Gothic sectors laid out anew every run, read every attack, and strike back.
