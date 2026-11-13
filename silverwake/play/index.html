@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Play SILVERWAKE free in your browser | Souls Indie</title>
+<meta name="description" content="Play the first chapter of SILVERWAKE, a Gothic bullet-hell roguelite, free in your browser: the tutorial, three sectors and their Guardians. No install.">
+<link rel="canonical" href="https://soulsindie.com/silverwake/play/">
+<link rel="icon" href="../assets/icon_512.png">
+<meta name="theme-color" content="#0b0e14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Play SILVERWAKE free in your browser | Souls Indie">
+<meta property="og:description" content="Play the first chapter of SILVERWAKE, a Gothic bullet-hell roguelite, free in your browser: the tutorial, three sectors and their Guardians. No install.">
+<meta property="og:image" content="https://soulsindie.com/silverwake/assets/og.jpg">
+<meta property="og:url" content="https://soulsindie.com/silverwake/play/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame", "name": "SILVERWAKE: the free chapter", "url": "https://soulsindie.com/silverwake/play/", "gamePlatform": "Web browser", "applicationCategory": "Game", "genre": ["Bullet hell", "Roguelite", "Shoot 'em up"], "author": {"@type": "Organization", "name": "Souls Indie Studio", "url": "https://soulsindie.com/"}, "publisher": {"@type": "Organization", "name": "Souls Indie Studio", "url": "https://soulsindie.com/"}, "image": "https://soulsindie.com/silverwake/assets/og.jpg", "playMode": "SinglePlayer", "description": "The first three sectors of SILVERWAKE, free in your browser: the tutorial, three Guardians and their hidden lairs.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SILVERWAKE", "item": "https://soulsindie.com/silverwake/"}, {"@type": "ListItem", "position": 2, "name": "Play free", "item": "https://soulsindie.com/silverwake/play/"}]}</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap"><a class="logo" href="../"><img src="../assets/icon_64.png" alt="" width="32" height="32">SILVERWAKE</a><nav aria-label="Site"><a href="../#bosses">Bosses</a><a href="../#guns">Guns</a><a href="../#together">Together</a><a href="../wiki/story/">Lore</a><a href="../wiki/">Guide</a><a href="../play/" aria-current=page>Play free</a><a href="../presskit/">Press</a><span class="nav-mark" aria-hidden="true"><img src="../assets/vanguard.png" alt="" width="60" height="60"></span></nav><a class="btn main bar-try" href="../play/">Play free</a></div><div class="wake" aria-hidden="true"></div></header>
+<main id="main" class="wrap play" style="padding-top:2rem">
+<h1>Play SILVERWAKE free in your browser</h1>
+<p class="lede">The first chapter, free: the tutorial and sectors 1-3 with their Guardians, hidden lairs and secret rooms. Your progress is kept in this browser.</p>
+<div class="play-frame" id="play-frame">
+<img src="../assets/reel.webp" alt="" width="1536" height="672">
+<div class="play-start"><button class="btn main" id="play-start">Start the game</button><small>About 125 MB the first time. Best on a computer, or a phone held sideways.</small></div>
+</div>
+<p class="cta"><button class="btn" id="play-full" hidden>Full screen</button><a class="btn" href="https://play.google.com/store/apps/details?id=com.silverwake.mansoornasir.com">Get the full game on Google Play</a><a class="btn" href="../wiki/controls/">How to play</a></p>
+<h2>Controls</h2>
+<p>On a phone or tablet, drag anywhere to fly and tap to dash, as in the app. With a keyboard:</p>
+<table class="keys"><tr><th scope=row>Fly</th><td>W A S D, or drag with the mouse</td></tr><tr><th scope=row>Aim</th><td>Arrow keys (the gun fires by itself in a fight)</td></tr><tr><th scope=row>Dash</th><td>Shift, or click</td></tr><tr><th scope=row>Parry</th><td>C</td></tr><tr><th scope=row>Melee strike</th><td>V</td></tr><tr><th scope=row>Swap guns</th><td>F</td></tr><tr><th scope=row>Item</th><td>E</td></tr><tr><th scope=row>Bomb</th><td>Q</td></tr><tr><th scope=row>Slow motion</th><td>Space</td></tr><tr><th scope=row>Pause</th><td>Esc</td></tr></table>
+<p>A gamepad works too: left stick to fly, right stick to aim, B to dash.</p>
+<p class="note">The browser chapter has no co-op and no store. Sectors 4-10, two-phone co-op, Google Play Games achievements and leaderboards are in the Android app.</p>
+</main>
+<script>
+(function () {
+  var frame = document.getElementById("play-frame"), full = document.getElementById("play-full");
+  document.getElementById("play-start").addEventListener("click", function () {
+    frame.innerHTML = '<iframe src="game/index.html" title="SILVERWAKE" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>';
+    frame.querySelector("iframe").focus();
+    full.hidden = false;
+  });
+  full.addEventListener("click", function () { var f = frame.querySelector("iframe"); if (f && f.requestFullscreen) f.requestFullscreen(); });
+})();
+</script>
+<footer class="foot">
+<div class="night">
+<span class="stars" aria-hidden="true"></span><span class="stars two" aria-hidden="true"></span>
+<img class="flyby" src="../assets/vanguard.png" alt="" width="60" height="60" aria-hidden="true" loading="lazy">
+<div class="wrap night-in">
+<div class="night-say">
+<p class="night-title">The night is still going.</p>
+<blockquote class="night-line" data-lines="[{&quot;who&quot;: &quot;Hesk&quot;, &quot;line&quot;: &quot;The docks remember you. That&#x27;s all they&#x27;re for.&quot;}, {&quot;who&quot;: &quot;Sorrel&quot;, &quot;line&quot;: &quot;I&#x27;m still sitting. Someone has to.&quot;}, {&quot;who&quot;: &quot;Ambrel&quot;, &quot;line&quot;: &quot;Eleven fifty-nine. Still. Always.&quot;}, {&quot;who&quot;: &quot;Corwin&quot;, &quot;line&quot;: &quot;Mind the left thruster. It always drifted.&quot;}]"><p>The docks remember you. That's all they're for.</p><cite>Hesk</cite></blockquote>
+<p class="night-play">Out now on Google Play. The first three sectors are free.</p>
+<a class="btn main" href="https://play.google.com/store/apps/details?id=com.silverwake.mansoornasir.com">Get it on Google Play</a><a class="btn" href="../#try">Try the controls</a>
+</div>
+<div class="awake"><a href="../wiki/npcs/#hesk" aria-label="Meet Hesk"><span class="npc-sprite" style="background-image:url(../assets/npcs/hesk.png)"></span><b>Hesk</b></a><a href="../wiki/npcs/#sorrel" aria-label="Meet Sorrel"><span class="npc-sprite" style="background-image:url(../assets/npcs/sorrel.png)"></span><b>Sorrel</b></a><a href="../wiki/npcs/#ambrel" aria-label="Meet Ambrel"><span class="npc-sprite" style="background-image:url(../assets/npcs/ambrel.png)"></span><b>Ambrel</b></a><a href="../wiki/npcs/#corwin" aria-label="Meet Corwin"><span class="npc-sprite" style="background-image:url(../assets/npcs/corwin.png)"></span><b>Corwin</b></a></div>
+</div>
+<div class="ledge" aria-hidden="true"></div>
+</div>
+<div class="wrap foot-cols"><div><h2>Play</h2><ul><li><a href="../play/">Play in your browser</a></li><li><a href="../#bosses">Bosses</a></li><li><a href="../#try">Try the controls</a></li><li><a href="../#guns">Guns</a></li><li><a href="../wiki/together/">Playing together</a></li></ul></div><div><h2>Learn</h2><ul><li><a href="../wiki/start/">Your first hour</a></li><li><a href="../wiki/controls/">Controls</a></li><li><a href="../wiki/dodging/">Reading attacks</a></li><li><a href="../wiki/faq/">FAQ</a></li></ul></div><div><h2>Story</h2><ul><li><a href="../wiki/story/">The story</a></li><li><a href="../wiki/npcs/">NPCs</a></li><li><a href="../wiki/abbey/">The abbey and its bells</a></li><li><a href="../wiki/endings/">Endings</a></li></ul></div>
+<div><h2>Studio</h2><ul><li><a href="../../">Souls Indie Studio</a></li><li><a href="../presskit/">Press kit</a></li><li><a href="https://mansoornasir.github.io/silverwake-privacy/">Privacy policy</a></li><li><a href="https://buymeabitcoffee.vercel.app/btc/bc1qud62yu6pfgsx6suz99tjvtgxcfe2j5shp4ssdg?identifier=Buy+Me+a+BitCoffee" target="_blank" rel="noopener noreferrer">Buy Me BitCoffee</a></li><li><a href="mailto:support@soulsindie.com">support@soulsindie.com</a></li></ul></div>
+</div>
+<div class="wrap foot-end">
+<a href="../../"><img src="../assets/souls_indie_studio.png" alt="Souls Indie Studio" width="104" height="48" loading="lazy"></a>
+<p>Made by Souls Indie Studio. Google Play is a trademark of Google LLC.</p>
+<a class="to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+</div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

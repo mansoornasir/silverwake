@@ -308,3 +308,15 @@ details[open] summary { margin-bottom: .6rem; }
   .npc-sprite { animation: none; }
   .boss:hover { transform: none; }
 }
+
+/* the browser chapter (D1480) */
+.play-frame { position: relative; aspect-ratio: 16 / 7; background: #000; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 1.5rem 0 1rem; }
+.play-frame img { width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+.play-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.play-start { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; text-align: center; padding: 1rem; }
+.play-start small { color: var(--ink); background: rgba(11, 14, 20, .8); padding: .2rem .6rem; border-radius: 6px; }
+.btn[hidden] { display: none; }
+.play .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
+.keys { border-collapse: collapse; margin-bottom: 1rem; }
+.keys th, .keys td { text-align: left; padding: .3rem 1rem .3rem 0; border-bottom: 1px solid var(--line); }
+@media (max-width: 700px) { .play-frame { aspect-ratio: 2 / 1; } }
